@@ -1,0 +1,25 @@
+{
+    "name": "test-for-clnme",
+    "version": "1.0.0",
+    "description": "test work for clnme",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "generate": "nuxt generate",
+        "start": "nuxt start"
+    },
+    "keywords": [
+        "test"
+    ],
+    "author": "asiusj",
+    "license": "MIT",
+    "dependencies": {
+        "@nuxtjs/axios": "5.13.1",
+        "bootstrap-vue": "^2.21.2",
+        "nuxt": "2.15.2"
+    },
+    "devDependencies": {
+        "@nuxtjs/pwa": "3.3.5"
+    }
+}

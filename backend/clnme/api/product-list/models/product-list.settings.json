@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "product_lists",
+  "info": {
+    "name": "ProductList",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product"
+    }
+  }
+}
