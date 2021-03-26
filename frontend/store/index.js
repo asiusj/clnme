@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const apiUrl = "http://localhost:1337";
+const axiosSettings = {
+	baseURL: `${process.env.API_HOST ? "http://" + process.env.API_HOST : document.location.hostname}:${process.env.API_PORT || "1337"}`,
+};
 
 export const state = () => ({
 	serverError: { status: false, error: undefined, wasCachedAt: undefined },
@@ -40,12 +42,13 @@ export const getters = {
 export const actions = {
 	PRODUCT_LIST: async ({ commit }) => {
 		await axios
-			.get(apiUrl + "/product-list")
+			.get("/product-list", axiosSettings)
 			.then(({ data }) => {
 				commit("PRODUCTS", data.products);
 				commit("CATEGORY_TITLE", data.Title);
 			})
 			.catch((e) => {
+				console.log(e);
 				e.wasCachedAt = "store index.js actions PRODUCT_LIST";
 				commit("SERVER_ERROR", e);
 			});
